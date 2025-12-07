@@ -1,0 +1,35 @@
+version = 1
+revision = 3
+requires-python = ">=3.13"
+
+[[package]]
+name = "graphql-core"
+version = "3.2.7"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/ac/9b/037a640a2983b09aed4a823f9cf1729e6d780b0671f854efa4727a7affbe/graphql_core-3.2.7.tar.gz", hash = "sha256:27b6904bdd3b43f2a0556dad5d579bdfdeab1f38e8e8788e555bdcb586a6f62c", size = 513484, upload-time = "2025-11-01T22:30:40.436Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0a/14/933037032608787fb92e365883ad6a741c235e0ff992865ec5d904a38f1e/graphql_core-3.2.7-py3-none-any.whl", hash = "sha256:17fc8f3ca4a42913d8e24d9ac9f08deddf0a0b2483076575757f6c412ead2ec0", size = 207262, upload-time = "2025-11-01T22:30:38.912Z" },
+]
+
+[[package]]
+name = "sgqlc"
+version = "17.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "graphql-core" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/5f/7e/9784ce0994d55f2271af15b30f8564c39f997aa57fb2f5b7eab11c2f4feb/sgqlc-17.1.tar.gz", hash = "sha256:93309057889894899819e6aefee544e3d9aa85e33f694b88fb657526c45df4a4", size = 244807, upload-time = "2025-10-06T14:10:30.06Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/27/28/5bdd500f8e2cad9e8ed05de8b918ce16b486bc38b6180aa957ee0a2ba7d0/sgqlc-17.1-py3-none-any.whl", hash = "sha256:d4d030ee687b66a840d605c81060585998fc22bba805b55e496911108800fc48", size = 85619, upload-time = "2025-10-06T14:10:28.47Z" },
+]
+
+[[package]]
+name = "truesight"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "sgqlc" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "sgqlc", specifier = ">=17.1" }]
