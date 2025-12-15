@@ -15,8 +15,6 @@ class APIClient:
             "Authorization": f"Bearer {self._token}",
             "User-Agent": "STRATZ_API",
         }
-        endpoint = HTTPEndpoint(GRAPHQL_URL, )
+        endpoint = HTTPEndpoint(GRAPHQL_URL, headers)
         result = endpoint(query, vars)
-        # just return this for now I will test how
-        # to catch errors later... :)
         return result
