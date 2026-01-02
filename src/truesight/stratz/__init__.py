@@ -55,9 +55,11 @@ class StratzAPIClient:
             "User-Agent": "STRATZ_API",
         }
 
-    def send_query(self, query: str, vars: Optional[dict[str, Any]]) -> dict[str, Any]:
+    def send_query(self, query: str|Query, vars: Optional[dict[str, Any]]) -> dict[str, Any]:
         """ Send a rendered GQL query to the stratz api
         """
+        if isinstance(query, Query): # we need to call .render() on every Query so this function will do it for free.
+            query = query.render()
         endpoint = HTTPEndpoint(GRAPHQL_URL, self._header)
         response = endpoint(query, vars)
         if response is None:
