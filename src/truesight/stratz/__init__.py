@@ -90,5 +90,5 @@ class StratzAPIClient:
                 ]
             )
         )
-        return self.send_query(query.render(), {})
+        return self.send_query(query, {})
 
